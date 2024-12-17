@@ -7,6 +7,8 @@ import { LoadingState } from '../../components/LoadingState.js';
 import { PixelText } from '../../components/PixelText.js';
 import { Service } from '../../service/Service.js';
 import Settings from '../../settings.json';
+import { EmojiDrawing } from '../../components/emoji_components/EmojiDrawing.js';
+
 import type { DrawingPostData, PostGuesses, UserData } from '../../types.js';
 
 interface GuessScreenProps {
@@ -99,7 +101,7 @@ export const GuessScreen = (props: GuessScreenProps, context: Context): JSX.Elem
       <vstack height="100%" width="100%" alignment="center middle">
         {/* Drawing */}
         <zstack alignment="center middle">
-          <Drawing data={props.postData.data} size={width} shadowOffset={8} />
+          <EmojiDrawing data={props.postData.data} size={width} shadowOffset={8} />
           {props.feedback === false && (
             <image
               url={'feedback-incorrect.png'}

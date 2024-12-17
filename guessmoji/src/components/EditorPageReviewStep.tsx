@@ -6,6 +6,8 @@ import { Service } from '../service/Service.js';
 import Settings from '../settings.json';
 import type { CandidateWord, GameSettings } from '../types.js';
 import { Drawing } from './Drawing.js';
+import { EmojiDrawing } from './emoji_components/EmojiDrawing.js';
+
 import { PixelText } from './PixelText.js';
 import { StyledButton } from './StyledButton.js';
 
@@ -13,7 +15,7 @@ interface EditorPageReviewStepProps {
   username: string | null;
   gameSettings: GameSettings;
   candidate: CandidateWord;
-  drawing: number[];
+  drawing: string[];
   onCancel: () => void;
 }
 
@@ -92,7 +94,7 @@ export const EditorPageReviewStep = (
       <spacer height="24px" />
 
       {/* Drawing */}
-      <Drawing size={256} data={props.drawing} />
+      <EmojiDrawing size={256} data={props.drawing} />
       <spacer height="24px" />
 
       {/* Body copy */}

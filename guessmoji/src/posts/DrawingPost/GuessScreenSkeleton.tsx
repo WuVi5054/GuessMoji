@@ -1,12 +1,14 @@
 import { Devvit } from '@devvit/public-api';
 
 import { Drawing } from '../../components/Drawing.js';
+import { EmojiDrawing } from '../../components/emoji_components/EmojiDrawing.js';
+
 import { HeroButton } from '../../components/HeroButton.js';
 import { PixelText } from '../../components/PixelText.js';
 import Settings from '../../settings.json';
 
 interface GuessScreenSkeletonProps {
-  drawing: number[];
+  drawing: string[];
   playerCount?: number;
   dictionaryName?: string;
 }
@@ -30,7 +32,7 @@ export const GuessScreenSkeleton = (props: GuessScreenSkeletonProps): JSX.Elemen
 
         <zstack height="100%" width="100%">
           <vstack height="100%" width="100%" alignment="center middle">
-            <Drawing data={props.drawing} size={width} shadowOffset={8} />
+            <EmojiDrawing data={props.drawing} size={width} shadowOffset={8} />
             <spacer height="8px" />
             <HeroButton label="LOADING ..." />
             <spacer height="16px" />

@@ -75,7 +75,7 @@ export type DrawingPostData = {
   postType: string;
   word: string;
   dictionaryName: string;
-  data: number[];
+  data: string[];
   authorUsername: string;
   date: number;
   solves: number;

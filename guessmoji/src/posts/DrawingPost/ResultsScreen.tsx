@@ -10,6 +10,7 @@ import { Service } from '../../service/Service.js';
 import Settings from '../../settings.json';
 import type { Dictionary, DrawingPostData } from '../../types.js';
 import { abbreviateNumber, capitalize, obfuscateString } from '../../utils.js';
+import { EmojiDrawing } from '../../components/emoji_components/EmojiDrawing.js';
 
 function includesCaseInsensitive(array: string[], target: string): boolean {
   return array.some((item) => item.toLowerCase() === target.toLowerCase());
@@ -126,7 +127,7 @@ export const ResultsScreen = (props: ResultsScreenProps, context: Context): JSX.
 
         {/* Header */}
         <hstack gap="medium" alignment="center middle">
-          <Drawing size={64} data={props.postData.data} />
+          <EmojiDrawing size={64} data={props.postData.data} />
           <vstack gap="small" alignment="start middle">
             <PixelText scale={2}>{props.postData.word}</PixelText>
             <PixelText scale={1.5} color={Settings.theme.secondary}>

@@ -4,12 +4,13 @@ import Settings from '../settings.json';
 import type { CollectionData } from '../types.js';
 import { Drawings } from './Drawings.js';
 import { StyledButton } from './StyledButton.js';
+import { EmojiDrawings } from './emoji_components/EmojiDrawings.js';
 
 interface PaginatedDrawingsProps {
   drawings:
     | {
         postId: string;
-        data: number[];
+        data: string[];
       }[]
     | CollectionData[]
     | null;
@@ -44,13 +45,13 @@ export const PaginatedDrawings: Devvit.BlockComponent<PaginatedDrawingsProps> = 
     <vstack grow width="100%" alignment="center">
       <spacer height="24px" />
 
-      <Drawings
+      <EmojiDrawings
         drawings={drawings}
         tileSize={tileSize}
         rowsPerPage={rowsPerPage}
         drawingsPerRow={drawingsPerRow}
         paginationOffset={paginationOffset}
-      ></Drawings>
+      ></EmojiDrawings>
 
       {hasOverflow && (
         <vstack width={`${cutOffWidth}px`} height="4px" backgroundColor={Settings.theme.tertiary} />

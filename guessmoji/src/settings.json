@@ -14,6 +14,10 @@
       "#2F80ED",
       "#9B51E0"
   ],
+  "emojis": [
+    "😀", "😍", "🌈", "🚀", "🌟", "🍕", "🐶", "🌺", "🎨", 
+    "🦄", "🍦", "💖", "🌍", "🏄", "🎉", "🍩", "🚲", "🌻"
+  ],
   "theme": {
     "primary": "#000000",
     "secondary": "#07495F",
@@ -31,5 +35,8 @@
   "guesserRewardForSolve": 2,
   "guesserRewardForFirstSolve": 10,
   "userRewardForCrosspost": 5,
-  "userRewardForReport": 2
+  "userRewardForReport": 2,
+  "drawModes": {
+    "enableEmojiMode": true
+  }
 }

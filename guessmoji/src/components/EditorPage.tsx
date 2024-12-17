@@ -11,8 +11,11 @@ import type {
   WordSelectionEvent,
 } from '../types.js';
 import { getCandidates } from '../utils.js';
-import { EditorPageDrawStep } from './EditorPageDrawStep.js';
+// import { EditorPageDrawStep } from './EditorPageDrawStep.js';
+import { EditorPageDrawStep } from './emoji_components/EmojiEditorPageDrawStep.js';
+
 import { EditorPageReviewStep } from './EditorPageReviewStep.js';
+
 import { EditorPageWordStep } from './EditorPageWordStep.js';
 
 interface EditorPageProps {
@@ -27,7 +30,7 @@ export const EditorPage = (props: EditorPageProps, context: Context): JSX.Elemen
   const service = new Service(context);
   const defaultStep = 'Word';
   const [currentStep, setCurrentStep] = useState<string>(defaultStep);
-  const [drawing, setDrawing] = useState<number[]>([]);
+  const [drawing, setDrawing] = useState<string[]>([]);
   const [candidate, setCandidate] = useState<CandidateWord | null>(null);
   const [candidates, setCandidates] = useState<CandidateWord[]>(() =>
     getCandidates(props.dictionaries)

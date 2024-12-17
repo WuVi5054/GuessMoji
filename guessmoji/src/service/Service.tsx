@@ -403,7 +403,7 @@ export class Service {
     postId: PostId;
     word: string;
     dictionaryName: string;
-    data: number[];
+    data: string[];
     authorUsername: string;
     subreddit: string;
   }): Promise<void> {
