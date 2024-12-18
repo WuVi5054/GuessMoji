@@ -41,7 +41,14 @@ export const EditorPageDrawStep = (
   // Common emoji options
   const emojiOptions = [
     '😀', '😍', '🌈', '🚀', '🌟', '🍕', '🐶', '🌺', '🎨', 
-    '🦄', '🍦', '💖', '🌍', '🏄', '🎉', '🍩', '🚲', '🌻'
+    '🦄', '🍦', '💖', '🌍', '🏄', '🎉', '🍩', '🚲', '🌻',
+    "🎸", "🐍", "🛤️", "🕷️", "👨", "🍎", "📱", "🦁", "👑", 
+    "⛄", "🌞", "🕒", "🍀", "🌌", "🐠", "🎣", 
+    "🎩", "🐇", "🍋", "🎂", "🍿", "🎬", 
+    "🌴", "🏝️", "🍹", "🔍", "🕵️‍♂️", "📜", "🛌", "💭", "💤", "🦇", 
+    "🏠", "🚂", "🐉", "🏃‍♂️", "🌊", "🏞️", "🚣‍♀️", "🚴‍♂️", "🚫", "🛑", 
+    "🛫", "🚚", "🛣", "🚧", "🛥", "🚮", "🛳", "🛴", "🛵", "🛶", 
+    "🛷", "🛸", "🛹", "🛺", "🛻", "🛼"
   ];
 
 
@@ -91,7 +98,7 @@ export const EditorPageDrawStep = (
   const generateEmojiGrid = () => {
   const size = '275px';
   const innerSize = 275;
-  const pixelSize: Devvit.Blocks.SizeString = `${innerSize / Settings.resolution}px`;
+  const pixelSize: Devvit.Blocks.SizeString = `${(innerSize / Settings.resolution)}px`;
 
   const emojiCells = emojiDrawingData.map((emoji, index) => (
     <hstack
@@ -154,26 +161,61 @@ export const EditorPageDrawStep = (
   );
 
   // Emoji selection palette generator
-  const generateEmojiPalette = () => (
-    <hstack gap="small" alignment="center wrap" style={{ overflow: 'auto' }}>
-      {emojiOptions.map((emoji) => (
-        <button
-          onPress={() => {
-            setSelectedEmoji(emoji);
-            console.log('selected emoji:', emoji);
-          }}
-          style={{
-            backgroundColor: selectedEmoji === emoji ? 'lightblue' : 'white',
-            padding: 'small',
-            borderRadius: 8,
-            flex: 'none',
-          }}
-        >
-          {emoji}
-        </button>
-      ))}
-    </hstack>
-  );
+  // const generateEmojiPalette = () => (
+  //   <hstack gap="small" alignment="center wrap" style={{ overflow: 'auto' }}>
+  //     {emojiOptions.map((emoji) => (
+  //       <button
+  //         onPress={() => {
+  //           setSelectedEmoji(emoji);
+  //           console.log('selected emoji:', emoji);
+  //         }}
+  //         style={{
+  //           backgroundColor: selectedEmoji === emoji ? 'lightblue' : 'white',
+  //           padding: 'small',
+  //           borderRadius: 8,
+  //           flex: 'none',
+  //         }}
+  //       >
+  //         {emoji}
+  //       </button>
+  //     ))}
+  //   </hstack>
+  // );
+  const generateEmojiPalette = () => {
+    const emojisPerRow = 10; // Adjust this number as needed
+    const rows = [];
+  
+    for (let i = 0; i < emojiOptions.length; i += emojisPerRow) {
+      const rowEmojis = emojiOptions.slice(i, i + emojisPerRow);
+      rows.push(
+        <hstack key={i} gap="small" alignment="center">
+          {rowEmojis.map((emoji) => (
+            <button
+              key={emoji}
+              onPress={() => {
+                setSelectedEmoji(emoji);
+                console.log('selected emoji:', emoji);
+              }}
+              style={{
+                backgroundColor: selectedEmoji === emoji ? 'lightblue' : 'white',
+                padding: 'small',
+                borderRadius: 8,
+                flex: 'none',
+              }}
+            >
+              {emoji}
+            </button>
+          ))}
+        </hstack>
+      );
+    }
+  
+    return (
+      <vstack gap="small" style={{ overflow: 'auto' }}>
+        {rows}
+      </vstack>
+    );
+  };
 
   // Mode toggle
   const ModeToggle = () => (
@@ -241,8 +283,9 @@ export const EditorPageDrawStep = (
           /> */}
           
           {drawingIsBlank && <PixelText color={Settings.theme.weak}>
-            {mode === 'pixel' ? 'Tap to draw' : 'Select emoji and tap to draw'}
+            {mode === 'pixel' ? 'Tap to draw' : 'Select emoji \nand tap to draw'}
           </PixelText>}
+          
           
           {mode === 'pixel' ? generatePixelGrid() : generateEmojiGrid()}
         </zstack>

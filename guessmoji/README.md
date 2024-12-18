@@ -1,12 +1,12 @@
-# Pixelary
+# GuessMoji
 
-**Draw, Guess, and Laugh Your Way to the Top!**
+**Put in your emojis to describe a phrase, Guess, and be confused all the way through!**
 
-Pixelary is a fun and interactive drawing and guessing game where you can compete with friends and other players to earn points, unlock rewards, and rise up the leaderboard.
+GuessMoji is a fun and interactive emoji based drawing and guessing game where you can compete with friends and other players to earn points, unlock rewards, and rise up the leaderboard.
 
 ## How to Earn Points
 
-- **Drawers**
+- **Emojiers**
 
   - **10 points** for posting a drawing
   - **1 point** for each correct guess made by others
@@ -19,17 +19,17 @@ As you accumulate points, you’ll automatically level up and unlock exciting pe
 
 ## Level Up & Unlock Perks
 
-Levels in Pixelary follow powers of two, and each level will take progressively longer to reach. As you level up, you’ll unlock awesome rewards like:
+Levels in GuessMoji follow powers of two, and each level will take progressively longer to reach. As you level up, you’ll unlock awesome rewards like:
 
-- **Extra Drawing Time** (+3 seconds per level)
+- **Extra Emojiing Time** (+3 seconds per level)
 - **Exclusive User Flair**
 - And more perks coming soon! (Feel free to suggest new perks you'd like to see!)
 
 ## Join the Community
 
-Stay connected and share your Pixelary experience with fellow players:
+Stay connected and share your GuessMoji experience with fellow players:
 
-- [r/Pixelary community](https://www.reddit.com/r/Pixelary/)
-- [Source Code](https://github.com/reddit/devvit/tree/main/packages/apps/pixelary)
+- [r/GuessMoji community](https://www.reddit.com/r/GuessMoji/)
+- [Source Code](https://github.com/wuvi5054/GuessMoji)
 
-May the best artist win!
+May the best emoji win!
