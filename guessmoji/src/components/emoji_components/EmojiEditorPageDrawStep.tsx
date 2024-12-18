@@ -40,15 +40,9 @@ export const EditorPageDrawStep = (
 
   // Common emoji options
   const emojiOptions = [
-    '😀', '😍', '🌈', '🚀', '🌟', '🍕', '🐶', '🌺', '🎨', 
-    '🦄', '🍦', '💖', '🌍', '🏄', '🎉', '🍩', '🚲', '🌻',
-    "🎸", "🐍", "🛤️", "🕷️", "👨", "🍎", "📱", "🦁", "👑", 
-    "⛄", "🌞", "🕒", "🍀", "🌌", "🐠", "🎣", 
-    "🎩", "🐇", "🍋", "🎂", "🍿", "🎬", 
-    "🌴", "🏝️", "🍹", "🔍", "🕵️‍♂️", "📜", "🛌", "💭", "💤", "🦇", 
-    "🏠", "🚂", "🐉", "🏃‍♂️", "🌊", "🏞️", "🚣‍♀️", "🚴‍♂️", "🚫", "🛑", 
-    "🛫", "🚚", "🛣", "🚧", "🛥", "🚮", "🛳", "🛴", "🛵", "🛶", 
-    "🛷", "🛸", "🛹", "🛺", "🛻", "🛼"
+    '🚂', '😍', '🌈', '🚀', '🌟', '🍕', '🐉', '🌞', '🦄', '💖',
+    '🌍', '🏄', "🎸", "🐍", "🕷️", "🍎", "📱", "🦁", "👑", "⛄", 
+    "🕒", "🚫", "🌌", "🎩", "🍋", "🎂", "🎬", "🕵️‍♂️", "🦇", "🏠"
   ];
 
 
@@ -211,7 +205,7 @@ export const EditorPageDrawStep = (
     }
   
     return (
-      <vstack gap="small" style={{ overflow: 'auto' }}>
+      <vstack gap ="tiny" alignment="center" style={{ overflow: 'auto' }}>
         {rows}
       </vstack>
     );
@@ -283,7 +277,7 @@ export const EditorPageDrawStep = (
           /> */}
           
           {drawingIsBlank && <PixelText color={Settings.theme.weak}>
-            {mode === 'pixel' ? 'Tap to draw' : 'Select emoji \nand tap to draw'}
+            {mode === 'pixel' ? 'Tap to draw' : 'Pick emoji to draw'}
           </PixelText>}
           
           
